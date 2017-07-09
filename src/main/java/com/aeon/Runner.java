@@ -47,7 +47,12 @@ public class Runner {
         System.out.println("convertFromBase: " + convertFromBase("377", 8));
         findMinMaxIndex();
 //        System.out.println(findPairs(2, b));
+//        System.out.printf("A = %d, Z = %d, a = %d, z = %d", (int) 'A', (int) 'Z', (int) 'a', (int) 'z');
+
+        System.out.println("\n\n 5^5: "+(8^8^2^2));
     }
+
+
 
 //    static int perMutation(int i) {
 //        if (i == 0) {
