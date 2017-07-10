@@ -49,8 +49,10 @@ public class Runner {
 //        System.out.println(findPairs(2, b));
 //        System.out.printf("A = %d, Z = %d, a = %d, z = %d", (int) 'A', (int) 'Z', (int) 'a', (int) 'z');
 
-        System.out.println("\n\n 5^5: "+(8^8^2^2));
+        System.out.println(reverseWork("roshane"));
     }
+
+
 
 
 
@@ -59,6 +61,14 @@ public class Runner {
 //            return 1;
 //        }
 //    }
+
+    private static String reverseWork(String word){
+        StringBuilder sb=new StringBuilder();
+        for(int i=word.length()-1;i>=0;i--){
+            sb.append(word.charAt(i));
+        }
+        return sb.toString();
+    }
 
     private static void findMinMaxIndex() {
         System.out.println("min max index: ");
