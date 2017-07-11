@@ -7,7 +7,11 @@ import java.util.Map;
  * Created by roshane on 7/11/17.
  */
 public class StringCompression {
-
+    /**
+     * when having special characters how to consider only alphabetic characters ex: [',',' ','#']
+     * consider character case sensitive or in-sensitive
+     *
+     */
     public static void main(String[] args) {
         String str = "aabcccccaaa";
         compressString(str);

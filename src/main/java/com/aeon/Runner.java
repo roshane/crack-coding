@@ -36,23 +36,95 @@ public class Runner {
 //        end = System.nanoTime();
 //        System.out.println("runtime: " + (end - start));
 
-        System.out.println(strHashCode("abbc"));
-        System.out.println(strHashCode("abad"));
-
-        Integer a = Integer.valueOf("ff", 16);
-        Integer b = Integer.valueOf("11111111", 2);
-        Integer c = Integer.valueOf("377", 8);
-        System.out.printf("a: %d | b: %d | c: %d\n", a, b, c);
-
-        System.out.println("convertFromBase: " + convertFromBase("377", 8));
-        findMinMaxIndex();
+//        System.out.println(strHashCode("abbc"));
+//        System.out.println(strHashCode("abad"));
+//
+//        Integer a = Integer.valueOf("ff", 16);
+//        Integer b = Integer.valueOf("11111111", 2);
+//        Integer c = Integer.valueOf("377", 8);
+//        System.out.printf("a: %d | b: %d | c: %d\n", a, b, c);
+//
+//        System.out.println("convertFromBase: " + convertFromBase("377", 8));
+//        findMinMaxIndex();
 //        System.out.println(findPairs(2, b));
 //        System.out.printf("A = %d, Z = %d, a = %d, z = %d", (int) 'A', (int) 'Z', (int) 'a', (int) 'z');
 
-        System.out.println(reverseWork("roshane"));
+//        System.out.println(reverseWork("roshane"));
+
+        Arrays.asList("HELLO", "WoRLd", "rOsHAnE")
+                .forEach(s -> {
+                    System.out.printf("toLoserCase[%s]: %s\n", s, toLowerCase(s));
+                });
+        System.out.println(" ',' int value: " + (int) ',');
+        doSomething();
     }
 
 
+    public static String toLowerCase(String input) {
+        String result = "";
+        for (int i = 0; i < input.length(); i++) {
+            char current = input.charAt(i);
+            if (isUppercaseChar(current)) {
+                result += toLowercaseChar(current);
+            } else {
+                result += current;
+            }
+        }
+        return result;
+    }
+
+    private static boolean isUppercaseChar(char c) {
+        int A = (int) 'A';
+        int Z = (int) 'Z';
+        int val = (int) c;
+        return (val >= A && val <= Z);
+    }
+
+    private static boolean isAlphabeticChar(char c) {
+        int a = (int) 'a';
+        int z = (int) 'z';
+        int A = (int) 'A';
+        int Z = (int) 'Z';
+        int current = (int) c;
+        return (current >= a && current <= z) || (current >= A && current <= Z);
+    }
+
+    private static char toLowercaseChar(char c) {
+        int diff = ((int) 'a' - (int) 'A');
+        int converted = (((int) c) + diff);
+        return (char) converted;
+    }
+
+
+    private static void doSomething() {
+        System.out.println("### doSomething ###");
+//        String str = "Ratzs live on no evil starz";
+        String str = "Zeus was deified, saw Suez";
+        str = toLowerCase(str);
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (char c : str.toCharArray()) {
+            if (c != ' ' && isAlphabeticChar(c)) {
+                map.compute(c, (k, v) -> v == null ? 1 : v + 1);
+            }
+        }
+        System.out.println(map);
+        boolean foundOddChar = false;
+        boolean passed = true;
+        System.out.println("Checking String : " + str);
+        for (Map.Entry<Character, Integer> e : map.entrySet()) {
+            if (e.getValue() % 2 != 0 && foundOddChar) {
+                System.out.println("Permutation of palindrome: Nooooooo");
+                passed = false;
+                break;
+            }
+            if (e.getValue() % 2 != 0) {
+                foundOddChar = true;
+            }
+        }
+        if (passed)
+            System.out.println("Permutation of palindrome: Yeeees");
+    }
 
 
 
@@ -211,11 +283,12 @@ public class Runner {
 
     static void printPattern(int n) {
         for (int i = 1; i < n + 1; i++) {
-            for (int j = n; j > i; j--) {
-                System.out.print(" ");
-            }
-            for (int j = i; j > 0; j--) {
-                System.out.print("#");
+            for (int j = n; j > 0; j--) {
+                if (j > i) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print("#");
+                }
             }
             System.out.println();
         }
