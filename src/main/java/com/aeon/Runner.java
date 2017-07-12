@@ -263,7 +263,6 @@ public class Runner {
         return positions;
     }
 
-
     static void sort10Array(int[] input) {
         for (int x = 0, y = input.length - 1; x < y; ) {
             if (input[x] == 0) {

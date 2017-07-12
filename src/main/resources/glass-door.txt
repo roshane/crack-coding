@@ -1,0 +1,28 @@
+1. Balanced parenthesis
+
+Create function that will determine are the parenthesis balanced in a given string
+boolean isBalanced(string)
+
+a(bcd)d => true
+(kjds(hfkj)sdhf => false
+(sfdsf)(fsfsf => false
+
+{[]}() => true
+{[}] => false
+
+2.
+Sort the content of the a file based on second field, e.g.
+
+Input file:
+Jervie,12,M
+Jaimy,11,F
+Tony,23,M
+Janey,11,F
+
+Output file:
+Jaimy,11,F
+Janey,11,F
+Jervie,12,M
+Tony,23,M
+don’t worry about open file, close file etc
+
