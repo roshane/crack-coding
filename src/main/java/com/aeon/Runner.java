@@ -51,11 +51,13 @@ public class Runner {
 
 //        System.out.println(reverseWork("roshane"));
 
-        Arrays.asList("HELLO", "WoRLd", "rOsHAnE")
-                .forEach(s -> {
-                    System.out.printf("toLoserCase[%s]: %s\n", s, toLowerCase(s));
-                });
-        System.out.println(" ',' int value: " + (int) ',');
+//        Arrays.asList("HELLO", "WoRLd", "rOsHAnE")
+//                .forEach(s -> {
+//                    System.out.printf("toLoserCase[%s]: %s\n", s, toLowerCase(s));
+//                });
+//        System.out.println(" ',' int value: " + (int) ',');
+        Integer i=1234;
+
         doSomething();
     }
 

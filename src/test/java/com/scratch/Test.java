@@ -55,11 +55,18 @@ class LinkedList<T> {
 
 class Test {
 
-    public static void main(String[] args) {
-        LinkedList<Integer> list=new LinkedList<>();
-        IntStream.range(1,10)
-                .forEach(list::add);
-        System.out.println(list);
-    }
+	final static int[] sizeTable = {9, 99, 999, 9999, 99999, 999999, 9999999,
+			99999999, 999999999, Integer.MAX_VALUE};
+
+	// Requires positive x
+	static int stringSize(int value) {
+		for (int i = 0; ; i++)
+			if (value <= sizeTable[i])
+				return i+1;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(stringSize(1));
+	}
 
 }
