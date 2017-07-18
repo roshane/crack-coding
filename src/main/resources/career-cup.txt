@@ -28,7 +28,7 @@ Time complexity O(nlogn) + O(n) ~= O(nlogn)
 
 
 2- It can also be dome in O(n) time, by using hashmap and set-
-a- Create an hash map of one array and aray element as key of the hashmap - O(n)
+a- Create an hash map of one array and array element as key of the hashmap - O(n)
 b- Traverse second array and check in hashmap for every element, if the key is present in hashmap then insert to the set. O(n)
 Now you have set of common elements in 2 arrays.
 c- Check for remaing arrays , whther elements of that array is present in the set or not. if yes then it is common element. - O(n) for each new array
